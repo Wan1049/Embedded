@@ -7,8 +7,7 @@ export default function Home() {
       <div className="text-center max-w-xl">
         <h1 className="text-4xl font-bold mb-4 text-black">Super CCTV ProMax Plus</h1>
         <p className="text-lg text-gray-700 mb-8">
-          ระบบกล้องอัจฉริยะ พร้อมฟีเจอร์ตรวจจับต่าง ๆ
-          แบบ Real-time และ สามารถควบคุมการหมุนกล้องได้
+          ระบบกล้องอัจฉริยะ พร้อมฟีเจอร์ตรวจจับต่างๆแบบ Real-time และ ย้อนหลังได้ถึง 1 ชั่วโมง แล้วยังมาพร้อมกับฟีเจอร์สุดเจ๋งอย่างการหมุนกล้องอีกด้วย
         </p>
 
         <div className="flex justify-center gap-4">
@@ -22,7 +21,7 @@ export default function Home() {
             href="/about"
             className="px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-2xl shadow hover:bg-blue-50 transition"
           >
-            Learn More
+            About us
           </Link>
         </div>
       </div>
