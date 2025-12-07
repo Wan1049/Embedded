@@ -75,7 +75,7 @@ export default function About() {
             มีคำถามหรือต้องการร่วมงานกับเรา ติดต่อได้เลย!
           </p>
           <a
-            href="mailto:contact@supercctvpromaxplus.com"
+            href="mailto:iamphoneza@gmail.com"
             className="inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow hover:bg-blue-700 transition-colors"
           >
             ติดต่อเรา
