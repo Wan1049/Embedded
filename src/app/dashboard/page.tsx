@@ -9,7 +9,7 @@ export default function Dashboard() {
   const [sensor, setSensor] = useState<SensorData | null>(null);
   const [history, setHistory] = useState<SensorData[]>([]);
   const [cameraUrl, setCameraUrl] = useState<string>("");
-  const [servo, setServo] = useState(90);       // ← ย้ายขึ้นมาที่นี่
+  const [servo, setServo] = useState(180);       // ← ย้ายขึ้นมาที่นี่
 
   // --- Send servo degree ---
   const sendDegree = async (deg: number) => {
@@ -30,7 +30,7 @@ export default function Dashboard() {
     }
   };
 
-  // --- Fetch Sensor Data every 0.2s ---
+  // --- Fetch Sensor Data every 0.5s ---
   useEffect(() => {
     const fetchSensor = async () => {
       try {
@@ -64,7 +64,7 @@ export default function Dashboard() {
       }
     };
 
-    const interval = setInterval(fetchSensor, 200);
+    const interval = setInterval(fetchSensor, 500);
     return () => clearInterval(interval);
   }, []);
 
@@ -104,7 +104,6 @@ export default function Dashboard() {
         <SensorCard title="Vibration" value={sensor.vibration} />
         <SensorCard title="Temperature" value={sensor.temp} />
         <SensorCard title="Obstacle" value={sensor.obs} />
-        <SensorCard title="Time" value={date.toLocaleString()} />
       </div>
 
       <div className="flex items-start justify-between mt-6">
@@ -144,7 +143,7 @@ export default function Dashboard() {
               - 15°
             </button>
             <button
-              onClick={() => sendDegree(90)}
+              onClick={() => sendDegree(180)}
               className="p-2 bg-gray-200 rounded hover:bg-gray-300 text-black"
             >
               Reset
