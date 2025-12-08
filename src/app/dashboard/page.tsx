@@ -14,16 +14,16 @@ export default function Dashboard() {
 
   // --- Send servo degree ---
   const sendDegree = async (deg: number) => {
-    const fixed = Math.min(360, Math.max(0, deg)); // limit 0–180
+    const fixed = deg // limit 0–180
     setServo(fixed);
 
     try {
       await fetch(
-        "https://supercctvpromaxplus.onrender.com/api/v1/servo/rotate",
+        "https://supercctvpromaxplus.onrender.com/api/v1/sensors/servo/",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ degree: fixed }),
+          body: JSON.stringify({ servo: fixed }),
         }
       );
     } catch (err) {

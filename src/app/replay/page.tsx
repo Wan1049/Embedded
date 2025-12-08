@@ -123,7 +123,7 @@ export default function History() {
                 const rect = e.currentTarget.getBoundingClientRect();
                 let x = e.clientX - rect.left;
 
-                const previewWidth = 160; // ครึ่ง width ของ preview
+                const previewWidth = 0; // ครึ่ง width ของ preview
                 if (x < previewWidth / 2) x = previewWidth / 2;
                 if (x > rect.width - previewWidth / 2) x = rect.width - previewWidth / 2;
                 setPreviewX(x);
