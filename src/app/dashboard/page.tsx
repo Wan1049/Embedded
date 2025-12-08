@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import SensorCard from "./SensorCard";
 import SensorChart from "./SensorChart";
 import { SensorData, ApiResponse } from "@/model/sensor";
+import Link from "next/link";
 
 export default function Dashboard() {
   const [sensor, setSensor] = useState<SensorData | null>(null);
@@ -117,52 +118,38 @@ export default function Dashboard() {
 
         {/* Servo Control */}
         <div className="mt-10 p-4 bg-white rounded shadow max-w-md">
-          <h2 className="text-xl font-semibold mb-4 text-black">
-            Servo Motor Control
-          </h2>
+        <h2 className="text-xl font-semibold mb-4 text-black">
+          Servo Motor Control
+        </h2>
 
-          <label className="text-black font-medium">Rotate (0° - 360°)</label>
-          <input
-            type="range"
-            min={0}
-            max={360}
-            value={servo}
-            onChange={(e) => sendDegree(Number(e.target.value))}
-            className="w-full mt-2"
-          />
+        <div className="mt-4 flex justify-between w-full">
+          <button
+            onClick={() => sendDegree(-1)}
+            className="px-8 py-2 text-xl bg-gray-200 rounded hover:bg-gray-300 text-black"
+          >
+            {"⬅"}
+          </button>
 
-          <p className="mt-2 text-black text-center font-semibold">
-            {servo}°
-          </p>
-
-          <div className="mt-4 grid grid-cols-3 gap-2">
-            <button
-              onClick={() => sendDegree(servo - 15)}
-              className="p-2 bg-gray-200 rounded hover:bg-gray-300 text-black"
-            >
-              - 15°
-            </button>
-            <button
-              onClick={() => sendDegree(180)}
-              className="p-2 bg-gray-200 rounded hover:bg-gray-300 text-black"
-            >
-              Reset
-            </button>
-            <button
-              onClick={() => sendDegree(servo + 15)}
-              className="p-2 bg-gray-200 rounded hover:bg-gray-300 text-black"
-            >
-              + 15°
-            </button>
-          </div>
+          <button
+            onClick={() => sendDegree(1)}
+            className="px-8 py-2 text-xl bg-gray-200 rounded hover:bg-gray-300 text-black"
+          >
+            {"⮕"}
+          </button>
         </div>
       </div>
 
+
+
+      </div>
+
       <div className="mt-10">
-        <h2 className="text-xl font-semibold mb-2 text-black">
-          Flame Sensor Graph
-        </h2>
-        <SensorChart data={history} dataKey="flame" />
+        <Link
+            href="/replay"
+            className="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow hover:bg-blue-700 transition"
+          >
+            Replay System
+          </Link>
       </div>
     </div>
   );

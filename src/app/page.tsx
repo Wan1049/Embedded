@@ -18,6 +18,12 @@ export default function Home() {
             Go to Dashboard
           </Link>
           <Link
+            href="/replay"
+            className="px-6 py-3 bg-blue-600 text-white rounded-2xl shadow hover:bg-blue-700 transition"
+          >
+            Replay System
+          </Link>
+          <Link
             href="/about"
             className="px-6 py-3 bg-white text-blue-600 border border-blue-600 rounded-2xl shadow hover:bg-blue-50 transition"
           >
